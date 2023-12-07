@@ -1,0 +1,49 @@
+nav {
+  background: linear-gradient(to right, #950b0b, #440606);
+  color: #FFF;
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+
+    .logo {
+      color: #FFF;
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+
+      li {
+        margin: 0 15px;
+        color: #FFF;
+        cursor: pointer;
+        position: relative;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .cart-icon {
+          display: flex;
+          align-items: center;
+
+
+        }
+        .cart-badge::after {
+            background-color:rgb(255, 162, 42)
+          }
+      }
+    }
+  }
+}

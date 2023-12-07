@@ -1,0 +1,43 @@
+
+<div class="cartBox">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Date</th>
+                <th >Quantity</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of carts; let index = index" >
+                <td></td>
+                <!-- tranfere data add pipe -->
+                <td>{{item.date | date:"longDate"}}</td>
+                <td>
+                    <!-- <div class="quantity">
+                        <button class="btn btn-dark" (click)="addAmount(index)" >+</button>
+                        <input class="form-control"  type="number" (change)="detectChange()" [(ngModel)]="item.quantity" min="1">
+                        <button class="btn btn-dark" (click)="minsAmount(index)" >-</button>
+                    </div> -->
+                    {{item.products.length}}
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteProduct(index)" >Delete</button>
+                    <button class="btn btn-primary"  >view</button>
+
+                </td>
+            </tr>
+        </tbody> 
+        <!-- <tfoot>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Total : {{total}} TD</th>
+                <th><button class="btn btn-success" (click)="addCart()">Order Now</button></th>
+            </tr>
+        </tfoot> -->
+    </table>
+    
+</div>
