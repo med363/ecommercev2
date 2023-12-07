@@ -59,4 +59,11 @@ end:['']
     
   }
 
+  deleteCart(id:number){
+    this.service.deleteCart(id).subscribe(res => {
+      this.getCarts()
+      alert("cart deleted")
+    })
+  }
+
 }
