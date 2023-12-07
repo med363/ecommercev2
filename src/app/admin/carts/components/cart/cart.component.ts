@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CartsService } from '../../services/carts.service';
-import { jsPDF } from 'jspdf';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -11,10 +10,12 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CartComponent implements OnInit {
   constructor(private service:CartsService, private build:FormBuilder) { }
   carts:any[] = [];
+  products:any[]=[]
   total:number = 0;
   // formgrup
   form!:FormGroup
   // success:boolean = false
+  details = {}
   ngOnInit(): void {
       // formgrup
     this.form = this.build.group({
@@ -66,4 +67,9 @@ end:['']
     })
   }
 
+  view(index:number){
+    this.details = this.carts[index]
+    console.log(this.details);
+    
+  }
 }

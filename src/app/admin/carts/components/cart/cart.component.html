@@ -40,7 +40,7 @@
                 </td>
                 <td>
                     <button class="btn btn-danger" (click)="deleteCart(item.id)" >Delete</button>
-                    <button class="btn btn-primary"  >view</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#viewCart" (click)="view(index)" >view</button>
 
                 </td>
             </tr>
@@ -55,4 +55,48 @@
         </tfoot> -->
     </table>
     
+</div>
+<div class="modal fade" id="viewCart" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 900px!important;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModelLabel">Cart Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th style="width: 25%;">Quantity</th>
+                            <th>Totale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of products; let i = index">
+                            <td><img src="{{item.item.image}}" alt=""></td>
+                            <td>{{item.item.title}}</td>
+                            <td>{{item.item.price}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.item.price * item.quantity}} TD</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>Total : {{total | currency}}</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </div>
