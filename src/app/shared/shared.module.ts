@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SelectComponent } from './components/select/select.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FontAwesomeModule,
     BrowserModule ,
+    ReactiveFormsModule,
     FormsModule,
     RouterModule,
     HttpClientModule
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     BrowserModule ,
     SpinnerComponent,
+    ReactiveFormsModule,
     RouterModule,
     FormsModule,
     SelectComponent

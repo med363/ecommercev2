@@ -1,5 +1,20 @@
 
 <div class="cartBox">
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="col-md-3">
+                <label for="">Start date</label>
+                <input type="date" formControlName="Start" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <label for="">End date</label>
+                <input type="date" formControlName="end" class="form-control">
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+                <button class="btn btn-success" (click)="applyFilter()">Apply</button>
+            </div>
+        </div>
+    </form>
 
     <table class="table table-striped">
         <thead>
