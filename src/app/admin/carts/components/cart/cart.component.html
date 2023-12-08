@@ -66,35 +66,39 @@
                 </button>
             </div>
             <div class="modal-body">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th style="width: 25%;">Quantity</th>
-                            <th>Totale</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of products; let i = index">
-                            <td><img src="{{item.item.image}}" alt=""></td>
-                            <td>{{item.item.title}}</td>
-                            <td>{{item.item.price}}</td>
-                            <td>{{item.quantity}}</td>
-                            <td>{{item.item.price * item.quantity}} TD</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th>Total : {{total | currency}}</th>
-                        </tr>
-                    </tfoot>
-                </table>
+                <div class="cartBox">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th style="width: 25%;">Quantity</th>
+                                <th>Totale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of products; let i = index">
+                                <td><img src="{{item.item.image}}" alt=""></td>
+                                <td>{{item.item.title}}</td>
+                                <td>{{item.item.price}}</td>
+                                <td>{{item.quantity}}</td>
+                                <td>{{item.item.price * item.quantity}} TD</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th>Total : {{total}} TD</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+    
+                </div>
+
             </div>
         </div>
     </div>

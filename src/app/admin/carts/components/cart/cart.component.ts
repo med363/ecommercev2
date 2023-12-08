@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartsService } from '../../services/carts.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ProductsService } from 'src/app/admin/products/services/products.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,14 +9,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  constructor(private service:CartsService, private build:FormBuilder) { }
+  constructor(private service:CartsService, private build:FormBuilder, private product:ProductsService) { }
   carts:any[] = [];
   products:any[]=[]
   total:number = 0;
   // formgrup
   form!:FormGroup
   // success:boolean = false
-  details = {}
+  details:any
   ngOnInit(): void {
       // formgrup
     this.form = this.build.group({
@@ -69,7 +70,15 @@ end:['']
 
   view(index:number){
     this.details = this.carts[index]
+    for(let x in this.details.products){
+      // send product with specifie id
+this.product.getProductById(this.details.products[x].productId).subscribe(res=>{
+  this.products.push({item:res, quantity:this.details.products[x].quantity})
+})
+    }
     console.log(this.details);
     
   }
+
+
 }
